@@ -26,9 +26,20 @@ const WeatherCards = ({ city, units }) => { // se pasa los valores de captura y 
             width: "120px",
             Height: "177px",
             flexShrink: "0",
+            background: "#1E213A",
+            marginRight:"30px"
           }}
         >
-          <CardContent>  {/* contenido de las tarjetas de acuerdo a los datos del api */}
+          <CardContent
+          style={{
+            color: "#E7E7EB",
+            fontFamily: "Raleway",
+            fontSize: "16px",
+            fontStyle: "normal",
+            fontWeight: "500",
+            lineHeight: "normal",
+          }}
+          >  {/* contenido de las tarjetas de acuerdo a los datos del api */}
             <Typography variant="h6" component="div" align="center"> 
               {new Date(day.dt * 1000).toLocaleDateString("en-US", {
                 weekday: "short",

@@ -25,23 +25,28 @@ function ButtonsTemp({onUnitsChange}) {
         main: "#3f50b5",
         dark: "#002884",
         contrastText: "#fff",
+         custom: "EBEB7B",
+
+
       },
       secondary: {
         light: "#ff7961",
         main: "#f44336",
         dark: "#ba000d",
         contrastText: "#000",
+        custom:"#585676"
       },
     },
   });
+  
   return (
     <div>
       <ThemeProvider theme={theme} >
-      <Fab color="primary" aria-label="add"
+      <Fab aria-label="add"
       onClick={onChangeCelcius}>
         c°
       </Fab>
-      <Fab color="secondary" aria-label="edit"
+      <Fab aria-label="edit"
       onClick={onChangeFarenheit}>
         F°
       </Fab>

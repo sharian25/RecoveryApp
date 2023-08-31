@@ -1,6 +1,6 @@
 //la el componente mas trabajado de la App, es prácticamente donde corre el App
 import React from "react";
-import {Box,Card,CardContent,Typography,Button,IconButton,TextField,} from "@mui/material";
+import {Box,Card,CardContent,Typography,Button,IconButton,TextField,Grid} from "@mui/material";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import GpsFixedIcon from "@mui/icons-material/GpsFixed";
 import { useState } from "react";
@@ -34,50 +34,111 @@ const CurrentWeather = ({ weatherData,onCityChange,units,cityHistory,onCityClick
     }
   };
 
-  /* console.log(weatherData)
-console.log(city.className) */ // visualizaciones en la consola para ver los datos traidos y apoyarse enel proceso
+  console.log(weatherData)
+//console.log(city.className) // visualizaciones en la consola para ver los datos traidos y apoyarse enel proceso
   return (
     <Box>
-      <Card className="Current">
+      <Card className="Current"
+      sx={{
+        background:"#1E213A"
+
+      }}>
         <Box  // caja de busqueda
           style={{
             display: searchCity ? "none" : "",
           }}
         >
-          <Button variant="contained" color="primary" onClick={handleChange}>
-            Obtener ubicación
+          <Button variant="contained" color="primary" onClick={handleChange}
+          
+         style={{
+          marginTop:"42px",
+          marginLeft:"46px",
+          width: "161px",
+          height: "40px",
+          flexShrink: "0",
+          background: "#6E707A",
+          boxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
+          fontFamily: "Raleway",
+          fontSize: "16px",
+          fontStyle: "normal",
+          fontWeight: "500",
+          lineHeight: "normal"
+         }}
+          >
+            Search for Location
           </Button>
           <IconButton color="primary">
-            <GpsFixedIcon />
+            <GpsFixedIcon 
+            sx={{
+              marginLeft:"117px",
+              marginTop:"50px",
+              color:"#E7E7EB"
+            }}/>
           </IconButton>
         </Box>
         <Box //caja del formulario
           style={{
             display: !searchCity ? "none" : "",
+            marginTop:"82px",
           }}
-        >
-          <form onSubmit={handleSubmit}>
+        > 
+        {/* boton de salir */}
+          <Button color="primary" onClick={handleChange}
+          style={{
+            width: "17.58px",
+            height: "17.58px",
+            flexShrink: "0",
+            fill: "#E7E7EB",
+            color:"#E7E7EB",
+            fontSize:"25px",
+            marginLeft:"400px",
+            marginTop:"-150px"
+          
+          }}
+          > 
+            X
+          </Button>
+          <form className="form" onSubmit={handleSubmit}>
+
             <TextField //input
               value={city}
               onChange={(event) => setCity(event.target.value)}
               variant="outlined"
+              style={{
+                width: "268px",
+                height: "48px",
+                flexShrink: "0",
+                border: "1px solid #E7E7EB",
+              }}
+              inputProps={{
+                style:{ 
+                  color:"white"
+                }
+              }}
             />
             <Button //Boton de buqueda
               onClick={handleChange}
               type="submit"
               variant="contained"
-              color="primary"
+              style={{
+                width: "86px",
+                height: "48px",
+                flexShrink: "0",
+                background: "#3C47E9",
+                marginLeft:"30px",
+              }}
+
+
+
             >
               Buscar
             </Button>
             {error && <p className="error">{error}</p>}
           </form>
-          <Button color="primary" onClick={handleChange}> {/* boton de salir */}
-            X
-          </Button>{" "}
-          <br />
+          
+          
           <div> {/* creación del historial pormedio de unalista */}
-            <h2>Historial de Ciudades</h2>
+            <h2 style={{color:"#7E7E7B"}}>History Search</h2>
             <ul className="list">
               {cityHistory.map((city) => (
                 <li key={city.name} onClick={() => handleHistory(city.name)}>
@@ -94,16 +155,67 @@ console.log(city.className) */ // visualizaciones en la consola para ver los dat
             marginTop: "200px",
           }}
         >
-          <img src={iconUrl} alt="Weather icon" />
-          <Typography variant="h4">{weatherData.name}</Typography>
-          <Typography>{weatherData.weather[0].description}</Typography>
-          <Typography>
-            Tem: {weatherData.main.temp}{" "}
-            {units === "metric" ? <span>°C</span> : <span>°F</span>}{" "}
-          </Typography>
-          <Typography>Humedad: {weatherData.main.humidity}%</Typography>
+          <img src={iconUrl} alt="Weather icon" 
+          style={{
+            marginTop:"-150px",
+            width: "202px",
+            height: "234px",
+            flexShrink: "0",
+             }}
+          />
+          
+          <Typography
+          style={{
+            color: "#E7E7EB",
+            fontFamily: "Raleway",
+            fontSize: "144px",
+            fontStyle: "normal",
+            fontWeight: "500",
+            lineHeight: "normal",
+            marginTop:"87px",
+          }}>
+          {weatherData.main.temp}{" "}
+            {units === "metric" ? <span className="units">°C</span> : <span className="units">°F</span>}{" "}
+          </Typography>     
+          <Typography
+          style={{
+            color: "#A09FB1",
+            fontFamily: "Raleway",
+            fontSize: "36px",
+            fontStyle: "normal",
+            fontWeight: "600",
+            lineHeight: "normal",
+            marginTop:"87px",
+          }}
+          >{weatherData.weather[0].description}</Typography>
+          <Box 
+          sx={{
+            marginTop:"140px",
+            display:"flex",
+            marginLeft:"117px",
+          }}>
+         <IconButton color="primary">
+            <LocationOnIcon 
+            sx={{
+              color:"#E7E7EB"
+            }}/>
+          </IconButton>
+           <Typography variant="h4"
+           style={{
+            color: "#88869D",
+            fontFamily: "Raleway",
+            fontSize: "18px",
+            fontStyle: "normal",
+            fontWeight: "600",
+            lineHeight: "normal",
+           }}
+           >{weatherData.name}</Typography>
+          </Box>
         </CardContent>
       </Card>
+      <Box>
+</Box>
+
     </Box>
   );
 };0
