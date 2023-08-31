@@ -5,10 +5,63 @@
   text-align: center;
 }
 
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.error {
+  animation: fadeInOut 3s linear;
+}
+
+
 .App {
+  display: flex;
   background-color: red;
-  width: 1470px;
+width: 1470px;
 height: 1023px;
 flex-shrink: 0;
+}
 
+.Current {
+width: 459px;
+height: 1023px;
+/* flex-shrink: 0; */
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  background-color: blue;
+}
+
+.weathercards {
+  margin-top: 148px;
+  margin-bottom: 100px;
+  margin-left: 154px;
+  width: 655px;
+  height: 177px;
+  flex-shrink: 0;
+  background-color: blueviolet;
+}
+
+.detailsweather {
+  width: 656px;
+  margin-top: 50px;
+  margin-left: 154px;
+}
+
+.list {
+  list-style: none;
+}
+
+.list li {
+line-height: 50px;
+cursor: pointer;
 }

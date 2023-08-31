@@ -1,11 +1,2 @@
-import React from 'react'
-
-function prueba() {
-  return (
-    <div>
-        <h1>hola mundo</h1>
-    </div>
-  )
-}
-
-export default prueba
+// archivo para hacer prueba con codigos antes de implementarlos
+// estudiar su comportamiento y Funcionamiento
