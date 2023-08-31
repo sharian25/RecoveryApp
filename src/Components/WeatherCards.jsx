@@ -15,8 +15,6 @@ const WeatherCards = ({ city, units }) => { // se pasa los valores de captura y 
       });
   }, [city, units]);// dependencias de las que dependen los cambios del api
 
-  console.log(weatherData);
-
   return (
     <Box display="flex" flexDirection="row"> 
       {weatherData.map((day, index) => (
