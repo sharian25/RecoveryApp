@@ -54,9 +54,6 @@ function App() {
         cityHistory={cityHistory}
         onCityClick={handleCityClick}
       />
-
-      {/* <HistoryCity cityHistory={cityHistory} onCityClick={handleCityClick} /> */}
-
       <div className="cards">
         <div className="weathercards">
           <WeatherCards units={units} city={city} />

@@ -34,7 +34,8 @@ const CurrentWeather = ({ weatherData,onCityChange,units,cityHistory,onCityClick
     }
   };
 
-  console.log(weatherData)
+ console.log("esta es zona horaria", weatherData.dt)
+ // console.log(weatherData.timezone)
 //console.log(city.className) // visualizaciones en la consola para ver los datos traidos y apoyarse enel proceso
   return (
     <Box>
@@ -188,11 +189,29 @@ const CurrentWeather = ({ weatherData,onCityChange,units,cityHistory,onCityClick
             marginTop:"87px",
           }}
           >{weatherData.weather[0].description}</Typography>
+          <Typography
+          style={{
+            color: "#88869D",
+            fontFamily: "Raleway",
+            fontSize: "20px",
+            fontStyle: "normal",
+            fontWeight: "500",
+            lineHeight: "normal",
+            marginTop: "105px",
+
+          }}
+          >
+            {new Date(weatherData.dt * 1000).toLocaleDateString("en-US", {
+                weekday: "short",
+                month: "short",
+                day: "numeric",
+              })}
+          </Typography>
           <Box 
           sx={{
-            marginTop:"140px",
+            marginTop:"25px",
             display:"flex",
-            marginLeft:"117px",
+            marginLeft:"140px",
           }}>
          <IconButton color="primary">
             <LocationOnIcon 
