@@ -30,15 +30,17 @@ flex-shrink: 0;
 }
 
 .Current {
-width: 459px;
-height: 1023px;
-/* flex-shrink: 0; */
+  width: 459px;
+  height: 1023px;
+  flex-shrink: 0;
 }
 
 .cards {
   display: flex;
   flex-direction: column;
-  background-color: blue;
+ background: #100E1D;
+ 
+  
 }
 
 .weathercards {
@@ -48,7 +50,6 @@ height: 1023px;
   width: 655px;
   height: 177px;
   flex-shrink: 0;
-  background-color: blueviolet;
 }
 
 .detailsweather {
@@ -57,11 +58,39 @@ height: 1023px;
   margin-left: 154px;
 }
 
+.weathercards {
+color: #E7E7EB;
+
+}
+
 .list {
   list-style: none;
+  color: #E7E7EB;
+font-family: Raleway;
+font-size: 50px;
+font-style: normal;
+font-weight: 500;
+
+  
 }
 
 .list li {
-line-height: 50px;
+line-height: 70px;
 cursor: pointer;
+display:in;
+
 }
+
+.units {
+  color: #A09FB1;
+font-family: Raleway;
+font-size: 48px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+}
+
+.form {
+  color: white;
+}
+
