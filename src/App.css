@@ -22,8 +22,8 @@
 
 
 .App {
-  display: flex;
-  background-color: red;
+display: flex;
+background: #100E1D;
 width: 1470px;
 height: 1023px;
 flex-shrink: 0;

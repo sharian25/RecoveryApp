@@ -1,3 +1,5 @@
+//Componente creado aparte para el cambio de unidades de temperatura
+//se hizo aparte por lo cargado y enredoso que podria quedar otro componente
 import React, { useState } from "react";
 import { Fab, } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
