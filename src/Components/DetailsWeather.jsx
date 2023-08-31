@@ -1,3 +1,4 @@
+// Componente que muestra las especificaciones de la ciudad buscada
 import React from 'react'
 import { Grid, Card, CardContent, Typography } from '@mui/material';
 
